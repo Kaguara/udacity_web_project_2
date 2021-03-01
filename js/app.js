@@ -112,9 +112,52 @@ function navBarClickEvents(){
             const section_id = section_title.replace(/\s+/g, '');
             console.log('Active section id: ' + section_id);
 
-            //ToDo: clear your-active-class form the other sections
-            for (let j=0; j<all_sections_list.length; j++){
+            //clear your-active-class from the other sections. (lazy method :/)
+            if (i == 0){
+                console.log("At section 1, removing your-active-class from other sections")
+                const menu_item_1 = all_menu_items[i+1];
+                const menu_item_2 = all_menu_items[i+2];
+                //remove 'your-active-class' from section one
+                const section_title_1 = '#' + menu_item_1.innerHTML.toLowerCase();
+                const section_id_1 = section_title_1.replace(/\s+/g, '');
+                const active_section_1 = document.querySelector(section_id_1); 
+                active_section_1.classList.remove('your-active-class');
+                
+                //remove 'your-active-class' from section two
+                const section_title_2 = '#' + menu_item_2.innerHTML.toLowerCase();
+                const section_id_2 = section_title_2.replace(/\s+/g, '');
+                const active_section_2 = document.querySelector(section_id_2); 
+                active_section_2.classList.remove('your-active-class');
+            } else if (i == 1){
+                console.log("At section 2, removing your-active-class from other sections")
+                const menu_item_1 = all_menu_items[i-1];
+                const menu_item_2 = all_menu_items[i+1];
+                //remove 'your-active-class' from section one
+                const section_title_1 = '#' + menu_item_1.innerHTML.toLowerCase();
+                const section_id_1 = section_title_1.replace(/\s+/g, '');
+                const active_section_1 = document.querySelector(section_id_1); 
+                active_section_1.classList.remove('your-active-class');
 
+                //remove 'your-active-class' from section two
+                const section_title_2 = '#' + menu_item_2.innerHTML.toLowerCase();
+                const section_id_2 = section_title_2.replace(/\s+/g, '');
+                const active_section_2 = document.querySelector(section_id_2); 
+                active_section_2.classList.remove('your-active-class');
+            } else if (i == 2){
+                console.log("At section 3, removing your-active-class from other sections")
+                const menu_item_1 = all_menu_items[i-2];
+                const menu_item_2 = all_menu_items[i-1];
+                //remove 'your-active-class' from section one
+                const section_title_1 = '#' + menu_item_1.innerHTML.toLowerCase();
+                const section_id_1 = section_title_1.replace(/\s+/g, '');
+                const active_section_1 = document.querySelector(section_id_1); 
+                active_section_1.classList.remove('your-active-class');
+                
+                //remove 'your-active-class' from section two
+                const section_title_2 = '#' + menu_item_2.innerHTML.toLowerCase();
+                const section_id_2 = section_title_2.replace(/\s+/g, '');
+                const active_section_2 = document.querySelector(section_id_2); 
+                active_section_2.classList.remove('your-active-class');
             }
             
             const active_section = document.querySelector(section_id); 
@@ -147,5 +190,3 @@ navBarClickEvents()
 
 // Set sections as active
 setActiveElementOnScroll()
-
-
