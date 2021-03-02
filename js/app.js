@@ -67,13 +67,19 @@ function buildNavBarElements(){
     const myNavBarList = document.createElement('ul');
     myNavBarList.setAttribute('class', 'navbar__menu');
     for (let i = 0; i < all_sections_list.length; i++){
-        const myNavBarListItem = document.createElement('li');
+        const myNavBarListItem = document.createElement('a');
         myNavBarListItem.setAttribute('class', 'navbar__menu menu__link')
         //Retrieve the section's title 
         const sectionTitle = all_sections_list[i].querySelector('h2').innerHTML;
         //Add the section's title to the menu nav bar
         myNavBarListItem.textContent = sectionTitle;
+        console.log('Navbar item text content: ' + myNavBarListItem.textContent);
+        const section_title = '#' + sectionTitle.toLowerCase();
+        const section_id = section_title.replace(/\s+/g, '');
+        myNavBarListItem.setAttribute('href', section_id)
+        console.log('Navbar item outer HTML: ' + myNavBarListItem.outerHTML);
         myNavBarList.appendChild(myNavBarListItem);
+        console.log('NavBar div HTML: ' + myNavBarList.outerHTML);
     }
     myNavBarDiv.appendChild(myNavBarList);
     //mainHeading.insertAdjacentHTML('afterbegin', myNavBarDiv)
