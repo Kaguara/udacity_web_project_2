@@ -16,6 +16,7 @@ body {
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
+    margin-top: 30px;
 }
 
 
@@ -48,6 +49,7 @@ p {
 /* ---- Layout Rules ---- */
 main {
     margin: 10vh 1em 10vh;
+    margin-top: 30px;
 }
 
 .main-hero {
@@ -58,17 +60,19 @@ main {
 section {
     position: relative;
     min-height: 80vh;
+    margin-top: 30px;
 }
 
 
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.navbar__menu ul{
-    overflow: hidden;
+.navbar__menu ul {
+    overflow: scroll;
     background-color: #333;
     position: fixed;
     top: 0;
+    margin-top: 0;
     width: 100%;
 }
 
@@ -80,6 +84,7 @@ section {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    top: 0;
 }
 
 .navbar__menu .menu__link {
@@ -90,9 +95,16 @@ section {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    top: 0;
 }
 
 .navbar__menu .menu__link:hover {
+    background: #ddd;
+    color: black;
+    transition: ease 0.3s all;
+}
+
+.active_section {
     background: #ddd;
     color: black;
     transition: ease 0.3s all;
